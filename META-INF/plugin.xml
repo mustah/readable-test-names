@@ -1,0 +1,35 @@
+<idea-plugin version="2">
+  <id>org.jetbrains.testnames</id>
+  <name>Readable test names for java</name>
+  <version>1.0</version>
+  <vendor email="must.tahir@gmail.com" url="https://twitter.com/_musten_">Must</vendor>
+
+  <description>
+    <![CDATA[
+      Additional rename refactoring that renames methods from camel cased names to underscored names.<br>
+      <small>'ThisIsATestMethod' will become 'This_Is_A_Test_Method'</small>
+      <br/>
+      <br/>
+      ]]>
+  </description>
+
+  <change-notes>
+    <![CDATA[
+
+      ]]>
+  </change-notes>
+
+  <idea-version since-build="107.105"/>
+
+  <actions>
+    <action
+      id="ReadableTestNamesPlugin.Refactor"
+      class="org.jetbrains.testnames.ReadableTestNameAction"
+      text="Rename camel case to underscore">
+      <add-to-group group-id="RefactoringMenu" anchor="last"/>
+    </action>
+  </actions>
+
+  <depends>com.intellij.modules.lang</depends>
+
+</idea-plugin>
