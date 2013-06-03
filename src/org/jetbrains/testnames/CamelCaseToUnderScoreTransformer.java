@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
  */
 class CamelCaseToUnderScoreTransformer {
 
+  @NotNull
   public String transform(@NotNull final String stringToTransform) {
     return stringToTransform.replaceAll("([a-z])([A-Z])", "$1_$2");
   }

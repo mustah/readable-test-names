@@ -1,9 +1,9 @@
 package org.jetbrains.testnames;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * <br> User: must <br> Date: 2013-06-02

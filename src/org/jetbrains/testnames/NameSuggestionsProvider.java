@@ -11,7 +11,7 @@ class NameSuggestionsProvider {
 
   private final String initialName;
 
-  NameSuggestionsProvider(final String initialName) {
+  NameSuggestionsProvider(@Nullable final String initialName) {
     this.initialName = initialName;
   }
 
