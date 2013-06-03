@@ -10,10 +10,12 @@ import static org.junit.Assert.assertNotNull;
  */
 public class CamelCaseToUnderScoreTransformerTest {
 
+  private final CamelCaseToUnderScoreTransformer camelCaseToUnderScore = new CamelCaseToUnderScoreTransformer();
+
   @Test
   public void Should_Replace_Camel_Case_With_Underscore() throws Exception {
-    String withUnderscore = new CamelCaseToUnderScoreTransformer().transform("ShouldReplaceCamelCaseWithUnderscore");
-    assertNotNull(withUnderscore);
-    assertEquals("Should_Replace_Camel_Case_With_Underscore", withUnderscore);
+    String transformed = camelCaseToUnderScore.transform("ShouldReplaceCamelCaseWithUnderscore");
+    assertNotNull(transformed);
+    assertEquals("Should_Replace_Camel_Case_With_Underscore", transformed);
   }
 }

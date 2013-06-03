@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
  */
 class NameSuggestionsProvider {
 
+  private static final int TEST_PREFIX_LENGTH = 5;
+
   private final String initialName;
 
   NameSuggestionsProvider(@Nullable final String initialName) {
@@ -20,8 +22,16 @@ class NameSuggestionsProvider {
     LinkedHashSet<String> nameSuggestions = null;
     if (initialName != null) {
       nameSuggestions = new LinkedHashSet<String>();
-      nameSuggestions.add(new CamelCaseToUnderScoreTransformer().transform(initialName));
+      String transformed = new CamelCaseToUnderScoreTransformer().transform(initialName);
+      nameSuggestions.add(transformed);
+      removeTestPrefixAndAsSuggestion(nameSuggestions, transformed);
     }
     return nameSuggestions;
+  }
+
+  private void removeTestPrefixAndAsSuggestion(final LinkedHashSet<String> nameSuggestions, final String transformed) {
+    if (transformed != null && transformed.startsWith("test_") && transformed.length() > TEST_PREFIX_LENGTH) {
+      nameSuggestions.add(transformed.substring(TEST_PREFIX_LENGTH));
+    }
   }
 }

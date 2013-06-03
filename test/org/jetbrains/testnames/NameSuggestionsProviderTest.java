@@ -1,5 +1,6 @@
 package org.jetbrains.testnames;
 
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 
 import org.junit.Test;
@@ -23,5 +24,24 @@ public class NameSuggestionsProviderTest {
     LinkedHashSet<String> suggestions = new NameSuggestionsProvider("SomeCamelCaseInitialText").get();
     assertNotNull(suggestions);
     assertEquals(1, suggestions.size());
+    assertEquals("Some_Camel_Case_Initial_Text", suggestions.iterator().next());
+  }
+
+  @Test
+  public void test_Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
+    LinkedHashSet<String> suggestions = new NameSuggestionsProvider("testSomeCamelCaseInitialText").get();
+    assertNotNull(suggestions);
+    assertEquals(2, suggestions.size());
+    Iterator<String> iterator = suggestions.iterator();
+    assertEquals("test_Some_Camel_Case_Initial_Text", iterator.next());
+    assertEquals("Some_Camel_Case_Initial_Text", iterator.next());
+  }
+
+  @Test
+  public void Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
+    LinkedHashSet<String> suggestions = new NameSuggestionsProvider("test").get();
+    assertNotNull(suggestions);
+    assertEquals(1, suggestions.size());
+    assertEquals("test", suggestions.iterator().next());
   }
 }
