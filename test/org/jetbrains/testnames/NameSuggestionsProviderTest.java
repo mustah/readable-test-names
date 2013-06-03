@@ -38,7 +38,7 @@ public class NameSuggestionsProviderTest {
   }
 
   @Test
-  public void Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
+  public void Should_Return_The_Same_String_If_It_Is_Only_Test() throws Exception {
     LinkedHashSet<String> suggestions = new NameSuggestionsProvider("test").get();
     assertNotNull(suggestions);
     assertEquals(1, suggestions.size());
