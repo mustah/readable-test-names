@@ -9,6 +9,12 @@ class CamelCaseToUnderScoreTransformer {
 
   @NotNull
   public String transform(@NotNull final String stringToTransform) {
-    return stringToTransform.replaceAll("([a-z])([A-Z])", "$1_$2");
+    return stringToTransform.replaceAll(
+      String.format("%s|%s|%s",
+                    "(?<=[A-Z])(?=[A-Z][a-z])",
+                    "(?<=[^A-Z])(?=[A-Z])",
+                    "(?<=[A-Za-z])(?=[^A-Za-z])"
+      ),
+      "_");
   }
 }

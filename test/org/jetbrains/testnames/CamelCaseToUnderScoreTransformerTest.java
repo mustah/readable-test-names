@@ -18,4 +18,11 @@ public class CamelCaseToUnderScoreTransformerTest {
     assertNotNull(transformed);
     assertEquals("Should_Replace_Camel_Case_With_Underscore", transformed);
   }
+
+  @Test
+  public void Should_Separate_On_Camel_Case_And_Numbers() throws Exception {
+    String transformed = camelCaseToUnderScore.transform("testConvert2Map");
+    assertNotNull(transformed);
+    assertEquals("test_Convert_2_Map", transformed);
+  }
 }
