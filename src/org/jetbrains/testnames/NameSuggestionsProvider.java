@@ -13,7 +13,7 @@ class NameSuggestionsProvider {
 
   private final String initialName;
 
-  NameSuggestionsProvider(@Nullable final String initialName) {
+  NameSuggestionsProvider(@Nullable String initialName) {
     this.initialName = initialName;
   }
 
@@ -24,12 +24,12 @@ class NameSuggestionsProvider {
       nameSuggestions = new LinkedHashSet<String>();
       String transformed = new CamelCaseToUnderScoreTransformer().transform(initialName);
       nameSuggestions.add(transformed);
-      removeTestPrefixAndAsSuggestion(nameSuggestions, transformed);
+      removeTestPrefixAndAddToSuggestions(nameSuggestions, transformed);
     }
     return nameSuggestions;
   }
 
-  private void removeTestPrefixAndAsSuggestion(final LinkedHashSet<String> nameSuggestions, final String transformed) {
+  private void removeTestPrefixAndAddToSuggestions(LinkedHashSet<String> nameSuggestions, String transformed) {
     if (transformed != null && transformed.startsWith("test_") && transformed.length() > TEST_PREFIX_LENGTH) {
       nameSuggestions.add(transformed.substring(TEST_PREFIX_LENGTH));
     }
