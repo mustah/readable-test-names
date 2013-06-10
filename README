@@ -1,0 +1,20 @@
+======================================================================
+Intellij IDEA plugin - additional refactoring option of method names
+======================================================================
+
+It is now possible to refactor method names from camel case to be separated with under score.
+
+For example, if you write the method name:
+
+ * "testShouldReturnNegativeNumber"
+
+ then this new refactoring option will suggest these two alternatives:
+
+   1. "test_Should_Return_Negative_Number"
+
+   and one without the "test"-prefix, as:
+
+   2. "Should_Return_Negative_Number"
+
+
+This new refactoring option can be found at the very bottom of the refactorings menu, called "Rename camel case to underscore".
