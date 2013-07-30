@@ -21,27 +21,28 @@ public class NameSuggestionsProviderTest {
 
   @Test
   public void Should_Return_A_List_Of_Size_One_When_Initial_Name_Is_Provided() throws Exception {
-    LinkedHashSet<String> suggestions = new NameSuggestionsProvider("SomeCamelCaseInitialText").get();
-    assertNotNull(suggestions);
-    assertEquals(1, suggestions.size());
-    assertEquals("Some_Camel_Case_Initial_Text", suggestions.iterator().next());
+    safeAssertEquals("Some_Camel_Case_Initial_Text", new NameSuggestionsProvider("SomeCamelCaseInitialText").get());
   }
 
   @Test
-  public void test_Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
+  public void Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
     LinkedHashSet<String> suggestions = new NameSuggestionsProvider("testSomeCamelCaseInitialText").get();
     assertNotNull(suggestions);
-    assertEquals(2, suggestions.size());
+
     Iterator<String> iterator = suggestions.iterator();
+    assertEquals(2, suggestions.size());
     assertEquals("Some_Camel_Case_Initial_Text", iterator.next());
     assertEquals("test_Some_Camel_Case_Initial_Text", iterator.next());
   }
 
   @Test
   public void Should_Return_The_Same_String_If_It_Is_Only_Test() throws Exception {
-    LinkedHashSet<String> suggestions = new NameSuggestionsProvider("test").get();
+    safeAssertEquals("test", new NameSuggestionsProvider("test").get());
+  }
+
+  private void safeAssertEquals(final String expected, final LinkedHashSet<String> suggestions) {
     assertNotNull(suggestions);
     assertEquals(1, suggestions.size());
-    assertEquals("test", suggestions.iterator().next());
+    assertEquals(expected, suggestions.iterator().next());
   }
 }
