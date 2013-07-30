@@ -33,8 +33,8 @@ public class NameSuggestionsProviderTest {
     assertNotNull(suggestions);
     assertEquals(2, suggestions.size());
     Iterator<String> iterator = suggestions.iterator();
-    assertEquals("test_Some_Camel_Case_Initial_Text", iterator.next());
     assertEquals("Some_Camel_Case_Initial_Text", iterator.next());
+    assertEquals("test_Some_Camel_Case_Initial_Text", iterator.next());
   }
 
   @Test
