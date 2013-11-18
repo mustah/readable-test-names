@@ -7,7 +7,8 @@
   <description>
     <![CDATA[
       Additional rename refactoring that renames methods from camel cased names to underscored names.<br>
-      <small>'ThisIsATestMethod' will become 'This_Is_A_Test_Method'</small>
+      'ThisIsATestMethod' will become 'This_Is_A_Test_Method'<br/><br/>
+      I have personally mapped it to CMD+OPTION+R on my mac.
       <br/>
       <br/>
       ]]>
