@@ -27,7 +27,7 @@ public class CamelCaseToUnderScoreTransformerTest {
     assertEqualsAfterTransformed("testConvert2Map", "test_Convert_2_Map");
   }
 
-  private void assertEqualsAfterTransformed(final String toTransform, final String expected) {
+  private void assertEqualsAfterTransformed(String toTransform, String expected) {
     assertEquals(expected, camelCaseToUnderScore.transform(toTransform));
   }
 }

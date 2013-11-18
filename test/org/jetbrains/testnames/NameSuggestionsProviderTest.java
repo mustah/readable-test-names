@@ -40,7 +40,7 @@ public class NameSuggestionsProviderTest {
     safeAssertEquals("test", new NameSuggestionsProvider("test").get());
   }
 
-  private void safeAssertEquals(final String expected, final Set<String> suggestions) {
+  private void safeAssertEquals(String expected, Set<String> suggestions) {
     assertNotNull(suggestions);
     assertEquals(1, suggestions.size());
     assertEquals(expected, suggestions.iterator().next());
