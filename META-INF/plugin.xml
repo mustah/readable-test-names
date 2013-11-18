@@ -15,7 +15,7 @@
 
   <change-notes>
     <![CDATA[
-
+      v1.0 Can refactor test methods. Also adds additional suggestion with "test_" prefix.<br/>
       ]]>
   </change-notes>
 
