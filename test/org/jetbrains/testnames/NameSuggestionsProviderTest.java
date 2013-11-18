@@ -1,7 +1,7 @@
 package org.jetbrains.testnames;
 
 import java.util.Iterator;
-import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -26,7 +26,7 @@ public class NameSuggestionsProviderTest {
 
   @Test
   public void Should_Add_One_More_Suggestion_That_Removes_The_Test_Prefix_Of_The_Name() throws Exception {
-    LinkedHashSet<String> suggestions = new NameSuggestionsProvider("testSomeCamelCaseInitialText").get();
+    Set<String> suggestions = new NameSuggestionsProvider("testSomeCamelCaseInitialText").get();
     assertNotNull(suggestions);
 
     Iterator<String> iterator = suggestions.iterator();
@@ -40,7 +40,7 @@ public class NameSuggestionsProviderTest {
     safeAssertEquals("test", new NameSuggestionsProvider("test").get());
   }
 
-  private void safeAssertEquals(final String expected, final LinkedHashSet<String> suggestions) {
+  private void safeAssertEquals(final String expected, final Set<String> suggestions) {
     assertNotNull(suggestions);
     assertEquals(1, suggestions.size());
     assertEquals(expected, suggestions.iterator().next());
