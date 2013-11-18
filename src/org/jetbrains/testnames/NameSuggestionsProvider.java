@@ -35,7 +35,7 @@ class NameSuggestionsProvider {
     }
   }
 
-  private boolean startsWithTest(final String transformed) {
+  private boolean startsWithTest(String transformed) {
     return transformed != null && transformed.startsWith("test_") && transformed.length() > TEST_PREFIX_LENGTH;
   }
 }

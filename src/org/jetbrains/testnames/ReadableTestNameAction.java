@@ -27,13 +27,13 @@ public class ReadableTestNameAction extends BaseRefactoringAction {
   }
 
   @Override
-  public boolean isEnabledOnElements(@NotNull final PsiElement[] elements) {
+  public boolean isEnabledOnElements(@NotNull PsiElement[] elements) {
     return renameElementAction.isEnabledOnElements(elements);
   }
 
   @Nullable
   @Override
-  public RefactoringActionHandler getHandler(@NotNull final DataContext dataContext) {
+  public RefactoringActionHandler getHandler(@NotNull DataContext dataContext) {
     return new MyRenameHandler();
   }
 
@@ -41,18 +41,16 @@ public class ReadableTestNameAction extends BaseRefactoringAction {
 
     @NotNull
     @Override
-    protected MemberInplaceRenamer createMemberRenamer(@NotNull final PsiElement element,
-                                                       final PsiNameIdentifierOwner elementToRename,
-                                                       final Editor editor) {
+    protected MemberInplaceRenamer createMemberRenamer(@NotNull PsiElement element,
+                                                       PsiNameIdentifierOwner elementToRename,
+                                                       Editor editor) {
       return new MyMemberInplaceRenamer(elementToRename, element, editor);
     }
   }
 
   private static class MyMemberInplaceRenamer extends MemberInplaceRenamer {
 
-    private MyMemberInplaceRenamer(@NotNull final PsiNamedElement elementToRename,
-                                   final PsiElement substituted,
-                                   final Editor editor) {
+    private MyMemberInplaceRenamer(@NotNull PsiNamedElement elementToRename, PsiElement substituted, Editor editor) {
       super(elementToRename, substituted, editor);
     }
 
