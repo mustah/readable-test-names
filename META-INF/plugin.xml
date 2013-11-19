@@ -1,6 +1,6 @@
 <idea-plugin version="2">
   <id>org.jetbrains.testnames</id>
-  <name>Readable test names for java</name>
+  <name>Readable test names</name>
   <version>1.0</version>
   <vendor email="must.tahir@gmail.com" url="https://twitter.com/_musten_">Must</vendor>
 
@@ -16,7 +16,7 @@
 
   <change-notes>
     <![CDATA[
-      v1.0 Can refactor test methods. Also adds additional suggestion with "test_" prefix.<br/>
+      v1.0 Can refactor test methods. Also adds additional suggestion with "test_" prefix. (Note that this plugin has only been tested on *.java files)<br/>
       ]]>
   </change-notes>
 
