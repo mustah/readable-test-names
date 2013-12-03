@@ -22,7 +22,7 @@ class NameSuggestionsProvider {
     LinkedHashSet<String> nameSuggestions = null;
     if (initialName != null) {
       nameSuggestions = new LinkedHashSet<String>();
-      String transformed = new CamelCaseToUnderScoreTransformer().transform(initialName);
+      String transformed = CamelCaseToUnderScore.transform(initialName);
       removeTestPrefixAndAddAsNewSuggestions(nameSuggestions, transformed);
       nameSuggestions.add(transformed);
     }
@@ -30,9 +30,8 @@ class NameSuggestionsProvider {
   }
 
   private void removeTestPrefixAndAddAsNewSuggestions(LinkedHashSet<String> nameSuggestions, String transformed) {
-    if (startsWithTest(transformed)) {
+    if (startsWithTest(transformed))
       nameSuggestions.add(transformed.substring(TEST_PREFIX_LENGTH));
-    }
   }
 
   private boolean startsWithTest(String transformed) {
