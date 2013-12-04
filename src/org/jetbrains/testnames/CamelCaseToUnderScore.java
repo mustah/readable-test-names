@@ -7,7 +7,8 @@ import org.jetbrains.annotations.NotNull;
  */
 final class CamelCaseToUnderScore {
 
-  private CamelCaseToUnderScore() {}
+  private CamelCaseToUnderScore() {
+  }
 
   @NotNull
   static String transform(@NotNull String stringToTransform) {
