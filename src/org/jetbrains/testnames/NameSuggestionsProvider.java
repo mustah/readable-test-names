@@ -30,11 +30,14 @@ class NameSuggestionsProvider {
   }
 
   private void removeTestPrefixAndAddAsNewSuggestions(LinkedHashSet<String> nameSuggestions, String transformed) {
-    if (startsWithTest(transformed))
+    if (startsWithTest(transformed)) {
       nameSuggestions.add(transformed.substring(TEST_PREFIX_LENGTH));
+    }
   }
 
   private boolean startsWithTest(String transformed) {
-    return transformed != null && transformed.startsWith("test_") && transformed.length() > TEST_PREFIX_LENGTH;
+    return transformed != null &&
+           transformed.startsWith("test_") &&
+           transformed.length() > TEST_PREFIX_LENGTH;
   }
 }
