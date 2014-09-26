@@ -4,21 +4,12 @@ import java.util.LinkedHashSet;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * <br> User: must <br> Date: 2013-06-02
- */
-class NameSuggestionsProvider {
+class NameSuggestions {
 
   private static final int TEST_PREFIX_LENGTH = 5;
 
-  private final String initialName;
-
-  NameSuggestionsProvider(@Nullable String initialName) {
-    this.initialName = initialName;
-  }
-
   @Nullable
-  public LinkedHashSet<String> get() {
+  public LinkedHashSet<String> suggestionsFor(String initialName) {
     LinkedHashSet<String> nameSuggestions = null;
     if (initialName != null) {
       nameSuggestions = new LinkedHashSet<String>();

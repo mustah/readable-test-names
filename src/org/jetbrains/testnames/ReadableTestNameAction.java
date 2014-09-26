@@ -14,10 +14,9 @@ import com.intellij.refactoring.actions.RenameElementAction;
 import com.intellij.refactoring.rename.inplace.MemberInplaceRenameHandler;
 import com.intellij.refactoring.rename.inplace.MemberInplaceRenamer;
 
-/**
- * <br> User: must <br> Date: 2013-06-02
- */
 public class ReadableTestNameAction extends BaseRefactoringAction {
+
+  private static final NameSuggestions NAME_SUGGESTIONS = new NameSuggestions();
 
   private final RenameElementAction renameElementAction = new RenameElementAction();
 
@@ -56,7 +55,7 @@ public class ReadableTestNameAction extends BaseRefactoringAction {
 
     @Override
     public boolean performInplaceRename() {
-      return performInplaceRefactoring(new NameSuggestionsProvider(myInitialName).get());
+      return performInplaceRefactoring(NAME_SUGGESTIONS.suggestionsFor(myInitialName));
     }
   }
 }

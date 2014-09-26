@@ -18,6 +18,9 @@
     <![CDATA[
       <ul>
         <il>
+          v1.0.1 - Refactor some classes. Avoid object creation for each test name refactoring.
+        </il>
+        <il>
           v1.0 - Can refactor test methods. Also adds additional suggestion with "test_" prefix. (Note that this plugin has only been tested on *.java files)<br/>
         </il>
       </ul>

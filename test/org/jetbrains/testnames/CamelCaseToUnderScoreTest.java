@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * <br> User: must <br> Date: 2013-06-02
- */
 public class CamelCaseToUnderScoreTest {
 
   @Test
