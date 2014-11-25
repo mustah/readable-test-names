@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.jetbrains.testnames</id>
   <name>Readable test names</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor email="must.tahir@gmail.com" url="https://twitter.com/_musten_">Must</vendor>
 
   <description>
