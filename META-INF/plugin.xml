@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.jetbrains.testnames</id>
   <name>Readable test names</name>
-  <version>1.0.1</version>
+  <version>1.1</version>
   <vendor email="must.tahir@gmail.com" url="https://twitter.com/_musten_">Must</vendor>
 
   <description>
@@ -17,6 +17,9 @@
   <change-notes>
     <![CDATA[
       <ul>
+        <il>
+          v1.1 - New feature - applying the refactoring twice adds no extra underscore to already existing underscores.
+        </il>
         <il>
           v1.0.1 - Refactor some classes. Avoid object creation for each test name refactoring.
         </il>
